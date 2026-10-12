@@ -1,0 +1,1249 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rohit Sul | Data Analyst</title>
+    <meta
+      name="description"
+      content="Rohit Sul - Data Analyst skilled in SQL, Python, Excel and Power BI."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      :root {
+        --bg: #0a0f1e;
+        --card: #121a30;
+        --line: #1f2b4a;
+        --text: #e6ecff;
+        --mute: #8d9bc4;
+        --a: #00e5c3;
+        --b: #4d8dff;
+        --c: #ffb547;
+        --mono: "JetBrains Mono", monospace;
+        --sans: "Space Grotesk", sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 70px;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        line-height: 1.6;
+        overflow-x: hidden;
+        background-image:
+          linear-gradient(var(--line) 1px, transparent 1px),
+          linear-gradient(90deg, var(--line) 1px, transparent 1px);
+        background-size: 48px 48px;
+        background-attachment: fixed;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(
+          circle at 20% 10%,
+          #0a0f1ecc,
+          var(--bg) 70%
+        );
+        z-index: -1;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      section {
+        padding: 90px 6%;
+      }
+      h2 {
+        font-family: var(--mono);
+        font-size: clamp(1.5rem, 3vw, 2.1rem);
+        margin-bottom: 40px;
+      }
+      h2 span {
+        color: var(--a);
+      }
+      h2::after {
+        content: "";
+        display: block;
+        width: 70px;
+        height: 4px;
+        margin-top: 10px;
+        background: linear-gradient(90deg, var(--a), var(--b));
+        border-radius: 4px;
+      }
+      /* navbar */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 50;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 6%;
+        background: #0a0f1ecc;
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+      .logo {
+        font-family: var(--mono);
+        font-weight: 600;
+        font-size: 1.15rem;
+      }
+      .logo i {
+        color: var(--a);
+      }
+      nav ul {
+        display: flex;
+        gap: 26px;
+        list-style: none;
+      }
+      nav ul a {
+        font-size: 0.92rem;
+        color: var(--mute);
+        transition: 0.3s;
+        position: relative;
+      }
+      nav ul a:hover,
+      nav ul a.on {
+        color: var(--a);
+      }
+      .burger {
+        display: none;
+        background: none;
+        border: 0;
+        color: var(--text);
+        font-size: 1.4rem;
+        cursor: pointer;
+      }
+      /* hero */
+      #hero {
+        width: 100vw;
+        height: 100vh;
+        min-height: 620px;
+        display: flex;
+        align-items: center;
+        padding: 80px 6% 0;
+        gap: 30px;
+      }
+      .hl,
+      .hr {
+        flex: 1;
+      }
+      .tag {
+        font-family: var(--mono);
+        color: var(--a);
+        font-size: 0.95rem;
+      }
+      #hero h1 {
+        font-size: clamp(2.2rem, 5.5vw, 4.2rem);
+        line-height: 1.1;
+        margin: 12px 0;
+      }
+      #hero h1 em {
+        font-style: normal;
+        background: linear-gradient(90deg, var(--a), var(--b));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .type {
+        font-family: var(--mono);
+        font-size: clamp(1rem, 2vw, 1.35rem);
+        color: var(--c);
+        min-height: 2em;
+      }
+      .type::after {
+        content: "|";
+        animation: blink 1s infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      .hl p {
+        color: var(--mute);
+        max-width: 520px;
+        margin: 14px 0 28px;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 26px;
+        border-radius: 50px;
+        font-weight: 700;
+        border: 2px solid var(--a);
+        transition: 0.3s;
+        cursor: pointer;
+        font-family: var(--sans);
+        font-size: 0.95rem;
+        margin: 0 10px 10px 0;
+      }
+      .btn.fill {
+        background: var(--a);
+        color: #04201b;
+      }
+      .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px #00e5c355;
+      }
+      .btn.out {
+        background: transparent;
+        color: var(--a);
+      }
+      .hr {
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+      .frame {
+        position: relative;
+        width: min(380px, 80vw);
+        aspect-ratio: 1;
+        border-radius: 50%;
+        padding: 8px;
+        background: conic-gradient(var(--a), var(--b), var(--c), var(--a));
+        animation: spin 8s linear infinite;
+      }
+      .frame > div {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: var(--card);
+        overflow: hidden;
+        animation: spin 8s linear infinite reverse;
+        display: grid;
+        place-items: center;
+        font-size: 6rem;
+        color: var(--line);
+      }
+      .frame img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .chip {
+        position: absolute;
+        background: var(--card);
+        border: 1px solid var(--line);
+        padding: 8px 14px;
+        border-radius: 12px;
+        font-family: var(--mono);
+        font-size: 0.78rem;
+        animation: float 4s ease-in-out infinite;
+      }
+      .chip i {
+        color: var(--a);
+        margin-right: 6px;
+      }
+      .c1 {
+        top: 6%;
+        right: 2%;
+      }
+      .c2 {
+        bottom: 12%;
+        left: 0;
+        animation-delay: 1s;
+      }
+      .c3 {
+        bottom: 0;
+        right: 8%;
+        animation-delay: 2s;
+      }
+      @keyframes float {
+        50% {
+          transform: translateY(-14px);
+        }
+      }
+      .bars {
+        position: absolute;
+        left: 6%;
+        bottom: 30px;
+        display: flex;
+        gap: 6px;
+        align-items: flex-end;
+        height: 60px;
+        opacity: 0.5;
+      }
+      .bars span {
+        width: 8px;
+        background: linear-gradient(var(--a), var(--b));
+        border-radius: 3px 3px 0 0;
+        animation: grow 2s ease-in-out infinite alternate;
+      }
+      @keyframes grow {
+        from {
+          height: 15%;
+        }
+        to {
+          height: 100%;
+        }
+      }
+      /* cards */
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 26px;
+        transition: 0.3s;
+      }
+      .card:hover {
+        border-color: var(--a);
+        transform: translateY(-6px);
+        box-shadow: 0 12px 35px #00e5c31a;
+      }
+      .about {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        gap: 36px;
+      }
+      .about p {
+        color: var(--mute);
+        margin-bottom: 16px;
+      }
+      .about b {
+        color: var(--text);
+      }
+      .stats {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      .stat {
+        flex: 1;
+        min-width: 90px;
+        text-align: center;
+      }
+      .stat h3 {
+        font-family: var(--mono);
+        color: var(--a);
+        font-size: 1.8rem;
+      }
+      .stat small {
+        color: var(--mute);
+      }
+      .edu {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .edu .card {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 16px;
+        align-items: center;
+      }
+      .edu h3 {
+        font-size: 1.05rem;
+      }
+      .edu h3 i {
+        color: var(--a);
+        margin-right: 8px;
+      }
+      .edu .sc {
+        font-family: var(--mono);
+        color: var(--c);
+        font-size: 1.15rem;
+        margin-top: 4px;
+      }
+      .edu small {
+        color: var(--mute);
+      }
+      .cert {
+        display: block;
+        height: 100px;
+        border-radius: 10px;
+        border: 2px dashed var(--line);
+        background: #0a0f1e;
+        overflow: hidden;
+        position: relative;
+        transition: 0.3s;
+      }
+      .cert:hover {
+        border-color: var(--a);
+      }
+      .cert img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .cert span {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        font-size: 0.72rem;
+        color: var(--mute);
+        padding: 6px;
+      }
+      .cert img:not([src]),
+      .cert img[src=""] {
+        display: none;
+      }
+      /* timeline */
+      .tl {
+        border-left: 3px solid var(--line);
+        margin-left: 10px;
+        padding-left: 30px;
+        position: relative;
+      }
+      .tl::before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: 8px;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        background: var(--a);
+        box-shadow: 0 0 0 6px #00e5c322;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        50% {
+          box-shadow: 0 0 0 12px #00e5c300;
+        }
+      }
+      .tl h3 {
+        font-size: 1.25rem;
+      }
+      .tl .co {
+        color: var(--a);
+        font-family: var(--mono);
+        font-size: 0.9rem;
+      }
+      .tl .dt {
+        color: var(--c);
+        font-size: 0.85rem;
+        font-family: var(--mono);
+        margin: 4px 0 12px;
+      }
+      .tl ul {
+        color: var(--mute);
+        padding-left: 18px;
+        margin-bottom: 16px;
+      }
+      /* skills */
+      .sk {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 22px;
+      }
+      .sk h3 {
+        font-family: var(--mono);
+        font-size: 1rem;
+        margin-bottom: 16px;
+        color: var(--a);
+      }
+      .sk h3 i {
+        margin-right: 8px;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .tags span {
+        padding: 7px 14px;
+        border-radius: 50px;
+        background: #0a0f1e;
+        border: 1px solid var(--line);
+        font-size: 0.85rem;
+        transition: 0.3s;
+      }
+      .tags span:hover {
+        background: var(--a);
+        color: #04201b;
+        border-color: var(--a);
+        transform: scale(1.07);
+      }
+      .rb {
+        text-align: center;
+        margin-top: 40px;
+      }
+      /* projects */
+      .proj {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+      .proj .card {
+        flex: 1 1 300px;
+        max-width: 100%;
+        align-self: stretch;
+        display: flex;
+        flex-direction: column;
+      }
+      .proj .ic {
+        font-size: 1.8rem;
+        color: var(--b);
+        margin-bottom: 12px;
+      }
+      .proj h3 {
+        margin-bottom: 8px;
+      }
+      .proj p {
+        color: var(--mute);
+        font-size: 0.9rem;
+        flex: 1;
+      }
+      .proj .tg {
+        margin: 14px 0;
+        font-family: var(--mono);
+        font-size: 0.74rem;
+        color: var(--a);
+      }
+      .proj .lk {
+        color: var(--c);
+        font-weight: 700;
+      }
+      .proj .lk:hover {
+        color: var(--a);
+      }
+      .yrb {
+        font-family: var(--mono);
+        color: var(--c);
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 6px 14px;
+        border: 1px solid var(--line);
+        border-radius: 50px;
+        background: #0a0f1e;
+      }
+      .bn {
+        height: 130px;
+        margin: -26px -26px 18px;
+        border-radius: 16px 16px 0 0;
+        overflow: hidden;
+      }
+      .bn svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+        transition: transform 0.6s;
+      }
+      .card:hover .bn svg {
+        transform: scale(1.06);
+      }
+      .scan {
+        animation: scan 2s ease-in-out infinite alternate;
+      }
+      @keyframes scan {
+        from {
+          transform: translateY(-38px);
+        }
+        to {
+          transform: translateY(38px);
+        }
+      }
+      /* connect */
+      .cn {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+      }
+      .cn a {
+        width: 120px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border-radius: 20px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        font-size: 0.85rem;
+        transition: 0.35s;
+      }
+      .cn a i {
+        font-size: 2rem;
+        transition: 0.35s;
+      }
+      .cn a:hover {
+        transform: translateY(-10px) rotate(-3deg);
+        border-color: var(--a);
+        box-shadow: 0 14px 30px #00e5c322;
+      }
+      .cn a:hover i {
+        color: var(--a);
+        transform: scale(1.2);
+      }
+      footer {
+        text-align: center;
+        padding: 30px;
+        color: var(--mute);
+        font-family: var(--mono);
+        font-size: 0.8rem;
+        border-top: 1px solid var(--line);
+      }
+      /* reveal */
+      .rv {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: 1s;
+      }
+      .rv.in {
+        opacity: 1;
+        transform: none;
+      }
+      @media (max-width: 850px) {
+        #hero {
+          flex-direction: column-reverse;
+          justify-content: center;
+          text-align: center;
+          padding-top: 90px;
+          height: auto;
+          min-height: 100vh;
+        }
+        .hl p {
+          margin-inline: auto;
+        }
+        .bars {
+          display: none;
+        }
+        .about {
+          grid-template-columns: 1fr;
+        }
+        .burger {
+          display: block;
+        }
+        nav ul {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          flex-direction: column;
+          background: var(--bg);
+          padding: 20px 6%;
+          gap: 16px;
+          display: none;
+          border-bottom: 1px solid var(--line);
+        }
+        nav ul.open {
+          display: flex;
+        }
+        .edu .card {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition: none !important;
+        }
+        .rv {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#hero" class="logo"
+        ><i class="fa-solid fa-chart-column"></i> rohit<span
+          style="color: var(--a)"
+          >.sul</span
+        ></a
+      >
+      <button class="burger" id="burger" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <ul id="menu">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#connect">Connect</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+      <div class="hl">
+        <div class="tag">&gt; Hello, world! I'm</div>
+        <h1>Rohit <em>Sul</em></h1>
+        <h1 style="font-size: clamp(1.6rem, 3.5vw, 2.6rem)">
+          I am a Data Analyst
+        </h1>
+        <div class="type" id="type"></div>
+        <p>
+          I turn millions of rows of raw data into clear insights, dashboards
+          and business decisions.
+        </p>
+        <a href="#projects" class="btn fill"
+          ><i class="fa-solid fa-chart-line"></i> View Projects</a
+        >
+        <a href="#connect" class="btn out"
+          ><i class="fa-solid fa-paper-plane"></i> Contact Me</a
+        >
+      </div>
+      <div class="hr">
+        <div class="frame">
+          <div>
+            <i class="fa-solid fa-user"></i>
+            <!-- put your photo as profile.jpg next to index.html -->
+            <img
+              src="Rohit%20Profile%20image.png"
+              alt="Rohit Sul"
+              style="
+                position: absolute;
+                inset: 8px;
+                width: calc(100% - 16px);
+                height: calc(100% - 16px);
+                border-radius: 50%;
+              "
+              onerror="this.remove()"
+            />
+          </div>
+        </div>
+        <div class="chip c1"><i class="fa-solid fa-database"></i>SQL</div>
+        <div class="chip c2"><i class="fa-brands fa-python"></i>Pandas</div>
+        <div class="chip c3"><i class="fa-solid fa-chart-pie"></i>Power BI</div>
+      </div>
+      <div class="bars" id="bars"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <h2><span>01.</span> About Me</h2>
+      <div class="about">
+        <div class="rv">
+          <p>
+            Hi, I'm <b>Rohit</b>, a <b>Data Analyst</b> from Pune, India. I
+            started in full stack development and moved into analytics because I
+            enjoy finding the story hidden in data.
+          </p>
+          <p>
+            I work with <b>SQL, Python, Excel and Power BI</b> to clean, analyse
+            and present data, and I'm looking for an entry-level Data Analyst /
+            Business Analyst role.
+          </p>
+        </div>
+        <div class="edu rv">
+          <div class="card">
+            <div>
+              <h3>
+                <i class="fa-solid fa-graduation-cap"></i>BCA, Solapur
+                University
+              </h3>
+              <small>Completed</small>
+            </div>
+            <div class="yrb">2025</div>
+          </div>
+          <div class="card">
+            <div>
+              <h3>
+                <i class="fa-solid fa-book"></i>12th, S.M Vidyalaya, Akluj
+              </h3>
+              <small>Completed</small>
+            </div>
+            <div class="yrb">2022</div>
+          </div>
+          <div class="card">
+            <div>
+              <h3>
+                <i class="fa-solid fa-school"></i>10th, S.M Vidyalaya, Akluj
+              </h3>
+              <small>Completed</small>
+            </div>
+            <div class="yrb">2020</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2><span>02.</span> Experience</h2>
+      <div class="tl rv">
+        <h3>Full Stack Intern</h3>
+        <div class="co">Techno World Software, Pune</div>
+        <div class="dt">
+          <i class="fa-regular fa-calendar"></i> June 2025 - Nov 2025
+        </div>
+        <ul>
+          <li>
+            Built responsive web apps with React.js, Django, Python, HTML, CSS
+            and JavaScript.
+          </li>
+          <li>
+            Wrote backend logic for secure data handling and worked with
+            cross-functional teams.
+          </li>
+        </ul>
+        <a
+          class="btn out"
+          id="internCert"
+          href="#"
+          target="_blank"
+          rel="noopener"
+          ><i class="fa-solid fa-certificate"></i> Internship Certificate</a
+        >
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2><span>03.</span> Skills</h2>
+      <div class="sk">
+        <div class="card rv">
+          <h3><i class="fa-solid fa-laptop-code"></i>Web Development</h3>
+          <div class="tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span
+            ><span>Flask</span>
+          </div>
+        </div>
+        <div class="card rv">
+          <h3><i class="fa-solid fa-chart-column"></i>Data Analytics</h3>
+          <div class="tags">
+            <span>Python</span><span>Pandas</span><span>NumPy</span
+            ><span>Plotly</span><span>Matplotlib</span><span>SQL</span
+            ><span>MS Excel</span><span>Power BI</span>
+          </div>
+        </div>
+      </div>
+      <div class="rb rv">
+        <a
+          class="btn fill"
+          href="https://drive.google.com/uc?export=download&id=1UIS-n1qD4jN9sRXAJ7gQXuL9a0WcWd4X"
+          target="_blank"
+          rel="noopener"
+          download
+          ><i class="fa-solid fa-download"></i> Download Resume</a
+        >
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2><span>04.</span> Projects</h2>
+      <div class="proj">
+        <div class="card rv">
+          <div class="bn">
+            <svg
+              viewBox="0 0 400 130"
+              preserveAspectRatio="xMidYMid slice"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#10341c" />
+                  <stop offset="1" stop-color="#0c831f" />
+                </linearGradient>
+              </defs>
+              <rect width="400" height="130" fill="url(#g1)" />
+              <g fill="#f8cb46" transform="translate(-16 0)">
+                <rect x="215" y="85" width="22" height="30" rx="3" />
+                <rect x="247" y="70" width="22" height="45" rx="3" />
+                <rect x="279" y="52" width="22" height="63" rx="3" />
+                <rect x="311" y="34" width="22" height="81" rx="3" />
+                <rect x="343" y="16" width="22" height="99" rx="3" />
+              </g>
+              <polyline
+                transform="translate(-16 0)"
+                points="226,70 258,56 290,40 322,22 354,8"
+                fill="none"
+                stroke="#fff"
+                stroke-width="3"
+                stroke-dasharray="6 5"
+              />
+              <text
+                x="46"
+                y="62"
+                font-family="JetBrains Mono,monospace"
+                font-size="30"
+                font-weight="700"
+                fill="#fff"
+              >
+                3.86M
+              </text>
+              <text
+                x="46"
+                y="84"
+                font-family="JetBrains Mono,monospace"
+                font-size="12"
+                fill="#d7f5dc"
+              >
+                ORDERS ANALYSED
+              </text>
+              <text
+                x="46"
+                y="108"
+                font-family="JetBrains Mono,monospace"
+                font-size="12"
+                fill="#f8cb46"
+              >
+                GMV 8.5x · AOV +70%
+              </text>
+            </svg>
+          </div>
+          <h3>Blinkit Order Analysis</h3>
+          <p>
+            Analyzed 3.86M orders across 10 business questions to assess
+            retention, revenue growth and discount leakage. Found 85% of new
+            customers don't reorder within 30 days and ₹17.3 Cr lost to failed
+            orders.
+          </p>
+          <div class="tg">MySQL · CTEs · Window Functions · PowerPoint</div>
+          <a
+            class="lk"
+            data-proj="blinkit"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            >View Project <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+        <div class="card rv">
+          <div class="bn">
+            <svg
+              viewBox="0 0 400 130"
+              preserveAspectRatio="xMidYMid slice"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#1c0b45" />
+                  <stop offset="1" stop-color="#5a189a" />
+                </linearGradient>
+              </defs>
+              <rect width="400" height="130" fill="url(#g2)" />
+              <circle
+                cx="300"
+                cy="65"
+                r="42"
+                fill="none"
+                stroke="#ffffff22"
+                stroke-width="18"
+              />
+              <circle
+                cx="300"
+                cy="65"
+                r="42"
+                fill="none"
+                stroke="#ff4d9d"
+                stroke-width="18"
+                stroke-dasharray="110 264"
+                transform="rotate(-90 300 65)"
+              />
+              <circle
+                cx="300"
+                cy="65"
+                r="42"
+                fill="none"
+                stroke="#ffb547"
+                stroke-width="18"
+                stroke-dasharray="60 264"
+                stroke-dashoffset="-110"
+                transform="rotate(-90 300 65)"
+              />
+              <text
+                x="46"
+                y="56"
+                font-family="JetBrains Mono,monospace"
+                font-size="28"
+                font-weight="700"
+                fill="#fff"
+              >
+                54 SKUs
+              </text>
+              <text
+                x="46"
+                y="78"
+                font-family="JetBrains Mono,monospace"
+                font-size="12"
+                fill="#e3d1ff"
+              >
+                10 DARK STORES · NOIDA
+              </text>
+              <rect
+                x="46"
+                y="92"
+                width="150"
+                height="24"
+                rx="12"
+                fill="#ff4d9d"
+              />
+              <text
+                x="58"
+                y="108"
+                font-family="JetBrains Mono,monospace"
+                font-size="12"
+                font-weight="700"
+                fill="#fff"
+              >
+                +₹4–5L / MONTH
+              </text>
+            </svg>
+          </div>
+          <h3>Zepto Products &amp; Promotions Analysis</h3>
+          <p>
+            Evaluated margin and promotion performance across 54 SKUs and 10
+            Noida dark stores. Isolated 6 below-cost SKUs and recommended
+            repricing and promo changes worth an estimated ₹4–5L monthly profit.
+          </p>
+          <div class="tg">Microsoft Excel · Pivot Dashboards</div>
+          <a
+            class="lk"
+            data-proj="quick"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            >View Project <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+        <div class="card rv">
+          <div class="bn">
+            <svg
+              viewBox="0 0 400 130"
+              preserveAspectRatio="xMidYMid slice"
+              aria-hidden="true"
+            >
+              <defs>
+                <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#06202e" />
+                  <stop offset="1" stop-color="#0b6e8a" />
+                </linearGradient>
+              </defs>
+              <rect width="400" height="130" fill="url(#g3)" />
+              <g
+                transform="translate(310 65)"
+                fill="none"
+                stroke="#00e5c3"
+                stroke-width="3"
+                stroke-linecap="round"
+              >
+                <path
+                  d="M-44-20v-24h24M20-44h24v24M44 20v24H20M-20 44h-24V20"
+                />
+                <ellipse
+                  cx="0"
+                  cy="-2"
+                  rx="22"
+                  ry="27"
+                  stroke="#fff"
+                  stroke-width="2.5"
+                />
+                <circle cx="-8" cy="-8" r="2" fill="#fff" />
+                <circle cx="8" cy="-8" r="2" fill="#fff" />
+                <path d="M-8 12q8 6 16 0" stroke="#fff" stroke-width="2.5" />
+                <line x1="-44" x2="44" y1="0" y2="0" class="scan" />
+              </g>
+              <text
+                x="46"
+                y="56"
+                font-family="JetBrains Mono,monospace"
+                font-size="26"
+                font-weight="700"
+                fill="#fff"
+              >
+                FaceLog
+              </text>
+              <text
+                x="46"
+                y="78"
+                font-family="JetBrains Mono,monospace"
+                font-size="12"
+                fill="#bdeaf5"
+              >
+                128-d FACE ENCODING
+              </text>
+              <text
+                x="46"
+                y="108"
+                font-family="JetBrains Mono,monospace"
+                font-size="12"
+                fill="#00e5c3"
+              >
+                REAL-TIME ATTENDANCE
+              </text>
+            </svg>
+          </div>
+          <h3>FaceLog Attendance System</h3>
+          <p>
+            Real-time webcam face recognition attendance web app with admin and
+            student dashboards, role-based login and CSV export of attendance
+            records.
+          </p>
+          <div class="tg">Python · Flask · OpenCV · MySQL</div>
+          <a
+            class="lk"
+            data-proj="facelog"
+            href="#"
+            target="_blank"
+            rel="noopener"
+            >View Project <i class="fa-solid fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONNECT -->
+    <section id="connect">
+      <h2><span>05.</span> Connect With Me</h2>
+      <div class="cn rv">
+        <a id="lnk" href="#" target="_blank" rel="noopener"
+          ><i class="fa-brands fa-linkedin"></i>LinkedIn</a
+        >
+        <a id="git" href="#" target="_blank" rel="noopener"
+          ><i class="fa-brands fa-github"></i>GitHub</a
+        >
+        <a id="lc" href="#" target="_blank" rel="noopener"
+          ><i class="fa-solid fa-code"></i>LeetCode</a
+        >
+        <a id="hr" href="#" target="_blank" rel="noopener"
+          ><i class="fa-brands fa-hackerrank"></i>HackerRank</a
+        >
+        <a id="mail" href="#"><i class="fa-solid fa-envelope"></i>Email</a>
+      </div>
+    </section>
+    <footer>
+      &lt;/&gt; Designed &amp; built by Rohit Sul · <span id="yr"></span>
+    </footer>
+
+    <script>
+      /* ====== EDIT YOUR LINKS HERE ====== */
+      const CFG = {
+        email: "Rohitsul1112003@gmail.com",
+        linkedin: "https://www.linkedin.com/in/rohit-sul-780265283/",
+        github: "https://github.com/thiro2003",
+        leetcode: "https://leetcode.com/u/YOUR_USERNAME/",
+        hackerrank: "https://www.hackerrank.com/profile/YOUR_USERNAME",
+        internCertId: "",
+        projects: {
+          blinkit: "https://github.com/thiro2003/Blinkit-Orders-Analysis",
+          quick:
+            "https://github.com/thiro2003/Zipto-Dark-Store-DownLane-3-Products-Promotions-Analysis",
+          facelog: "https://github.com/thiro2003/FaceLog",
+        },
+      };
+      /* ================================== */
+      const $ = (s) => document.querySelector(s),
+        $$ = (s) => [...document.querySelectorAll(s)];
+      const view = (id) =>
+        id ? `https://drive.google.com/file/d/${id}/view` : "#";
+      $("#lnk").href = CFG.linkedin;
+      $("#git").href = CFG.github;
+      $("#lc").href = CFG.leetcode;
+      $("#hr").href = CFG.hackerrank;
+      $("#mail").href = "mailto:" + CFG.email + "?subject=Hello%20Rohit";
+      $("#internCert").href = view(CFG.internCertId);
+      $$("[data-proj]").forEach((a) => (a.href = CFG.projects[a.dataset.proj]));
+      $$(".cert").forEach((a, i) => {
+        const id = Object.values(CFG.certIds)[i];
+        if (id) {
+          a.href = view(id);
+          a.querySelector("img").src =
+            `https://drive.google.com/thumbnail?id=${id}&sz=w600`;
+          a.querySelector("span").style.display = "none";
+          a.target = "_blank";
+        }
+      });
+      $("#yr").textContent = new Date().getFullYear();
+      /* mobile menu */
+      $("#burger").onclick = () => $("#menu").classList.toggle("open");
+      $$("#menu a").forEach(
+        (a) => (a.onclick = () => $("#menu").classList.remove("open")),
+      );
+      /* typing effect */
+      const words = [
+        "SQL Wizard",
+        "Python & Pandas",
+        "Dashboard Builder",
+        "Insight Hunter",
+      ];
+      let w = 0,
+        c = 0,
+        del = false;
+      (function t() {
+        const s = words[w];
+        $("#type").textContent = "> " + s.slice(0, c);
+        if (!del && c++ === s.length) {
+          del = true;
+          return setTimeout(t, 1400);
+        }
+        if (del && --c < 0) {
+          del = false;
+          c = 0;
+          w = (w + 1) % words.length;
+        }
+        setTimeout(t, del ? 45 : 90);
+      })();
+      /* animated bars */
+      $("#bars").innerHTML = Array.from(
+        { length: 14 },
+        (_, i) =>
+          `<span style="animation-delay:${i * 0.18}s;animation-duration:${1.4 + (i % 5) * 0.35}s"></span>`,
+      ).join("");
+      /* reveal + counters */
+      const io = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("in");
+              e.target.querySelectorAll("[data-n]").forEach((el) => {
+                const n = +el.dataset.n,
+                  d = +(el.dataset.d || 0);
+                let k = 0;
+                const f = setInterval(() => {
+                  k += n / 40;
+                  if (k >= n) {
+                    k = n;
+                    clearInterval(f);
+                  }
+                  el.textContent = k.toFixed(d);
+                }, 35);
+              });
+              io.unobserve(e.target);
+            }
+          }),
+        { threshold: 0.2 },
+      );
+      $$(".rv").forEach((el) => io.observe(el));
+      /* active nav link */
+      const so = new IntersectionObserver(
+        (es) =>
+          es.forEach((e) => {
+            if (e.isIntersecting)
+              $$("#menu a").forEach((a) =>
+                a.classList.toggle(
+                  "on",
+                  a.getAttribute("href") === "#" + e.target.id,
+                ),
+              );
+          }),
+        { threshold: 0.5 },
+      );
+      $$("section").forEach((s) => so.observe(s));
+    </script>
+  </body>
+</html>
